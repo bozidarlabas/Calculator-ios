@@ -12,5 +12,22 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var display: UILabel!
+
+    //All properties needs to be initialized
+    var userTyping: Bool = false
+    
+    
+    
+    @IBAction func appendDigit(sender: UIButton) {
+        //let is constant
+        let digit = sender.currentTitle!
+        if userTyping{
+            display.text = display.text! + digit
+        }else{
+            display.text = digit
+            userTyping = true
+        }
+               print("digit = \(digit)")
+    }
 }
 
