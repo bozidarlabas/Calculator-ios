@@ -8,6 +8,8 @@
 
 import UIKit
 
+//Controller controlls user interface
+//UIViewController will controll UI
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
