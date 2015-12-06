@@ -14,9 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var display: UILabel!
 
     //All properties needs to be initialized
-    var userTyping: Bool = false
-    
-    
+    var userTyping = false
     
     @IBAction func appendDigit(sender: UIButton) {
         //let is constant
@@ -28,6 +26,24 @@ class ViewController: UIViewController {
             userTyping = true
         }
                print("digit = \(digit)")
+    }
+    
+    //var operandStack: Array<Double> = Array<Double>()
+    var operandStack = Array<Double>()
+    @IBAction func enter() {
+        userTyping = false
+        operandStack.append(displayValue)
+        print("Operand stack = \(operandStack)")
+    }
+    
+    //Computed property
+    var displayValue: Double {
+        get{
+            return NSNumberFormatter().numberFromString(display.text!)!.doubleValue
+        }set{
+           display.text = "\(newValue)"
+            userTyping = false
+        }
     }
 }
 
