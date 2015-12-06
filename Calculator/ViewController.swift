@@ -36,6 +36,48 @@ class ViewController: UIViewController {
         print("Operand stack = \(operandStack)")
     }
     
+    //Method is called when user press x, /, + or -
+    @IBAction func operate(sender: UIButton) {
+        let operation = sender.currentTitle!
+        if(userTyping){
+            enter();
+        }
+        
+        switch operation {
+            case "×": performOperation{ $0 * $1 }
+            case "÷": performOperation{ $1 / $0 }
+            case "+": performOperation{ $0 + $1 }
+            case "−": performOperation{ $1 - $0 }
+            case "√": performSqrtOperation{ sqrt($0) }
+            default: break
+        }
+    }
+    
+    //Parameter is function which takes two doubles and return Double
+    func performOperation(operation: (Double, Double) -> Double){
+        if(operandStack.count >= 2){
+            //Calculate last two double from stack and remove them
+            displayValue = operation(operandStack.removeLast(), operandStack.removeLast())
+            //Add new value to stack
+            enter()
+        }
+    }
+    
+    //Parameter is function which takes two doubles and return Double
+    func performSqrtOperation(operation: Double -> Double){
+        if(operandStack.count >= 1){
+            //Calculate last two double from stack and remove them
+            displayValue = operation(operandStack.removeLast())
+            //Add new value to stack
+            enter()
+        }
+    }
+    
+//    func multiply
+    func divide(op1 : Double, op2: Double) -> Double{
+        return op1 / op2
+    }
+    
     //Computed property
     var displayValue: Double {
         get{
