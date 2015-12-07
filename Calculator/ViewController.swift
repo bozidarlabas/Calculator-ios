@@ -16,6 +16,9 @@ class ViewController: UIViewController {
     //All properties needs to be initialized
     var userTyping = false
     
+    //Instatiate Model
+    var brain = CalculatorBrain()
+    
     @IBAction func appendDigit(sender: UIButton) {
         //let is constant
         let digit = sender.currentTitle!
@@ -28,50 +31,32 @@ class ViewController: UIViewController {
                print("digit = \(digit)")
     }
     
-    //var operandStack: Array<Double> = Array<Double>()
-    var operandStack = Array<Double>()
     @IBAction func enter() {
         userTyping = false
-        operandStack.append(displayValue)
-        print("Operand stack = \(operandStack)")
+        //Update display Value
+        if let result =  brain.pushOperand(displayValue){
+            displayValue = result
+        }else{
+            displayValue = 0
+        }
     }
+    
+    //HOMEWORK - making display value into optional
     
     //Method is called when user press x, /, + or -
     @IBAction func operate(sender: UIButton) {
-        let operation = sender.currentTitle!
         if(userTyping){
             enter();
         }
-        
-        switch operation {
-            case "×": performOperation{ $0 * $1 }
-            case "÷": performOperation{ $1 / $0 }
-            case "+": performOperation{ $0 + $1 }
-            case "−": performOperation{ $1 - $0 }
-            case "√": performSqrtOperation{ sqrt($0) }
-            default: break
+        if let operation = sender.currentTitle{
+            if let result = brain.performOperation(operation){
+                displayValue = result
+            }else{
+                displayValue = 0
+            }
         }
     }
-    
-    //Parameter is function which takes two doubles and return Double
-    func performOperation(operation: (Double, Double) -> Double){
-        if(operandStack.count >= 2){
-            //Calculate last two double from stack and remove them
-            displayValue = operation(operandStack.removeLast(), operandStack.removeLast())
-            //Add new value to stack
-            enter()
-        }
-    }
-    
-    //Parameter is function which takes two doubles and return Double
-    func performSqrtOperation(operation: Double -> Double){
-        if(operandStack.count >= 1){
-            //Calculate last two double from stack and remove them
-            displayValue = operation(operandStack.removeLast())
-            //Add new value to stack
-            enter()
-        }
-    }
+  
     
 //    func multiply
     func divide(op1 : Double, op2: Double) -> Double{

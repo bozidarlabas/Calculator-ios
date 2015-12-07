@@ -12,6 +12,7 @@
 		D41AD5861C13434100F843EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D41AD5841C13434100F843EA /* Main.storyboard */; };
 		D41AD5881C13434100F843EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D41AD5871C13434100F843EA /* Assets.xcassets */; };
 		D41AD58B1C13434100F843EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D41AD5891C13434100F843EA /* LaunchScreen.storyboard */; };
+		D4FB31B11C156D4900DC7819 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB31B01C156D4900DC7819 /* CalculatorBrain.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		D41AD5871C13434100F843EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D41AD58A1C13434100F843EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D41AD58C1C13434100F843EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4FB31B01C156D4900DC7819 /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				D41AD5871C13434100F843EA /* Assets.xcassets */,
 				D41AD5891C13434100F843EA /* LaunchScreen.storyboard */,
 				D41AD58C1C13434100F843EA /* Info.plist */,
+				D4FB31B01C156D4900DC7819 /* CalculatorBrain.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -134,6 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4FB31B11C156D4900DC7819 /* CalculatorBrain.swift in Sources */,
 				D41AD5831C13434100F843EA /* ViewController.swift in Sources */,
 				D41AD5811C13434100F843EA /* AppDelegate.swift in Sources */,
 			);
@@ -285,6 +289,7 @@
 				D41AD5911C13434100F843EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
