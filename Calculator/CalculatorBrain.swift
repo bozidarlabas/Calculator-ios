@@ -49,6 +49,39 @@ class CalculatorBrain{
         knownOps["√"] = Op.UnaryOperation("√", sqrt)
     }
     
+    
+    //Property List is an AnyObject which is known to be a collection of objects which are only one of: NSString, NSArray, NSDictionary, NSNumber, NSData, NSDate (in this case this is NSString)
+    typealias Propertylist = AnyObject
+    var program: Propertylist{ //guaranted to be a PropertyList
+        get{
+            //Convert all items from opStack to String Array and return this Array
+            return opStack.map{ $0.description }
+//            var returnValue = Array<String>()  //this is property list...array are bridged to NSArray
+//            for op in opStack{
+//                returnValue.append(op.description)
+//            }
+//            return returnValue
+        }
+        set{
+            //get Array<String> of all symbols
+            if let opSymbols = newValue as? Array<String>{
+                var newOpStack = [Op]()
+                //Iterate through all items from Array<String> of symbols
+                    for opSymbol in opSymbols{
+                        //check if symbol exists (+. /, x, - and square root)
+                        if let op = self.knownOps[opSymbol]{
+                            newOpStack.append(op)
+                            //check if opSymbol is number
+                            //this is optional chaining
+                        }else if let operand = NSNumberFormatter().numberFromString(opSymbol)?.doubleValue{
+                            newOpStack.append(.Operand(operand)) //store number in newOpStack
+                    }
+                }
+                opStack = newOpStack
+            }
+        }
+    }
+    
     //Using Touple as return value
     //Big diference between struct and classes: 
     //  1.  classs can have inheritance

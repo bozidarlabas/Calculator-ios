@@ -72,5 +72,8 @@ class ViewController: UIViewController {
             userTyping = false
         }
     }
+    @IBAction func onClickX(sender: AnyObject) {
+        
+    }
 }
 
