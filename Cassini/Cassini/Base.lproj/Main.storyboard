@@ -104,6 +104,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="rMo-xS-SjO">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                                <animations/>
+                            </activityIndicatorView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2jj-44-q8X">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
@@ -111,9 +115,14 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rMo-xS-SjO" firstAttribute="centerX" secondItem="WiZ-Ug-eq6" secondAttribute="centerX" id="8Iw-t5-naR"/>
+                            <constraint firstItem="rMo-xS-SjO" firstAttribute="centerY" secondItem="WiZ-Ug-eq6" secondAttribute="centerY" id="Ldj-Oo-qQ3"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="scrollView" destination="2jj-44-q8X" id="NVC-bp-otp"/>
+                        <outlet property="spinner" destination="rMo-xS-SjO" id="6gL-Hi-hE8"/>
                     </connections>
                 </viewController>
             </objects>

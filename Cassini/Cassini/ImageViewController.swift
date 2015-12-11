@@ -20,6 +20,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var scrollView: UIScrollView!{
         didSet{
             scrollView.contentSize = imageView.frame.size
@@ -37,6 +38,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
     
     private func fetchImage(){
         if let url = imageURL{
+            spinner?.startAnimating() //? is added if image is fetching before outlet is loaded
             let qualityOfService = Int(QOS_CLASS_USER_INITIATED.rawValue)
             dispatch_async(dispatch_get_global_queue(qualityOfService, 0), { () -> Void in
                
@@ -48,7 +50,8 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
                         }else{
                             self.image = nil
                         }
-                    }  
+                    }
+                    
                 })
             })
         }
@@ -62,6 +65,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
             imageView.image = newValue
             imageView.sizeToFit()
             scrollView?.contentSize = imageView.frame.size
+            spinner?.stopAnimating()
         }
     }
     
