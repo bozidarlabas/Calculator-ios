@@ -20,6 +20,12 @@ class ImageViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var scrollView: UIScrollView!{
+        didSet{
+            scrollView.contentSize = imageView.frame.size
+        }
+    }
+    
     private func fetchImage(){
         if let url = imageURL{
             let imageData = NSData(contentsOfURL: url) //NSData is bag of bits, reach out internet and grab bag of bits
@@ -38,12 +44,13 @@ class ImageViewController: UIViewController {
         set{
             imageView.image = newValue
             imageView.sizeToFit()
+            scrollView?.contentSize = imageView.frame.size
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(imageView)
+        scrollView.addSubview(imageView)
     }
     
     override func viewWillAppear(animated: Bool) {
