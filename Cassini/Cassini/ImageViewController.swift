@@ -13,13 +13,16 @@ class ImageViewController: UIViewController {
     var imageURL: NSURL?{
         didSet{
             image = nil
-            fetchImage()
+            if view.window != nil{
+                fetchImage()
+            }
+            
         }
     }
     
     private func fetchImage(){
         if let url = imageURL{
-            let imageData = NSData(contentsOfURL: url) //bag of bits, reach out internet and grab bag of bits
+            let imageData = NSData(contentsOfURL: url) //NSData is bag of bits, reach out internet and grab bag of bits
             if imageData != nil{
                 image = UIImage(data: imageData!)
             }else{
@@ -41,6 +44,13 @@ class ImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(imageView)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if image == nil{
+            fetchImage()
+        }
     }
     
 }

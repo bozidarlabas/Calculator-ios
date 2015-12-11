@@ -13,6 +13,7 @@
 		D40907B51C1B23C800FCC45F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D40907B41C1B23C800FCC45F /* Assets.xcassets */; };
 		D40907B81C1B23C800FCC45F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D40907B61C1B23C800FCC45F /* LaunchScreen.storyboard */; };
 		D40907C11C1B248C00FCC45F /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40907C01C1B248C00FCC45F /* ImageViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D40907C31C1B289200FCC45F /* DemoURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40907C21C1B289200FCC45F /* DemoURL.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D40907B71C1B23C800FCC45F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D40907B91C1B23C800FCC45F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D40907C01C1B248C00FCC45F /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		D40907C21C1B289200FCC45F /* DemoURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoURL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				D40907BF1C1B23DF00FCC45F /* Supporting Files */,
 				D40907AF1C1B23C800FCC45F /* ViewController.swift */,
+				D40907C21C1B289200FCC45F /* DemoURL.swift */,
 				D40907B11C1B23C800FCC45F /* Main.storyboard */,
 				D40907C01C1B248C00FCC45F /* ImageViewController.swift */,
 			);
@@ -145,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D40907C31C1B289200FCC45F /* DemoURL.swift in Sources */,
 				D40907B01C1B23C800FCC45F /* ViewController.swift in Sources */,
 				D40907C11C1B248C00FCC45F /* ImageViewController.swift in Sources */,
 				D40907AE1C1B23C800FCC45F /* AppDelegate.swift in Sources */,
