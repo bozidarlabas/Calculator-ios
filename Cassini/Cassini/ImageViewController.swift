@@ -10,7 +10,23 @@ import UIKit
 
 class ImageViewController: UIViewController {
     
-    var imageURL: NSURL? 
+    var imageURL: NSURL?{
+        didSet{
+            image = nil
+            fetchImage()
+        }
+    }
+    
+    private func fetchImage(){
+        if let url = imageURL{
+            let imageData = NSData(contentsOfURL: url) //bag of bits, reach out internet and grab bag of bits
+            if imageData != nil{
+                image = UIImage(data: imageData!)
+            }else{
+                image = nil
+            }
+        }
+    }
     
     private var imageView = UIImageView()
     
