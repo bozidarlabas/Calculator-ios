@@ -59,7 +59,27 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sld-fb-7Xt">
                                 <rect key="frame" x="409" y="104" width="171" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9M-zR-nMP">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <animations/>
+                                        <state key="normal" title="Button"/>
+                                        <variation key="heightClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="22" y="0.0" width="46" height="30"/>
+                                        </variation>
+                                    </button>
+                                </subviews>
                                 <animations/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="t9M-zR-nMP"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="subviews">
+                                        <include reference="t9M-zR-nMP"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="200" verticalCompressionResistancePriority="700" image="stanford" translatesAutoresizingMaskIntoConstraints="NO" id="qQY-WG-ICR">
                                 <rect key="frame" x="20" y="142" width="479" height="438"/>
@@ -162,6 +182,7 @@
                                 <exclude reference="uIO-41-kJj"/>
                                 <exclude reference="lBX-tj-IFc"/>
                                 <exclude reference="yRB-Ua-rbT"/>
+                                <exclude reference="bq6-vY-ziP"/>
                                 <exclude reference="abq-vk-QqA"/>
                                 <exclude reference="cHz-CJ-Ng7"/>
                                 <exclude reference="iax-ry-ct0"/>
@@ -169,7 +190,6 @@
                                 <exclude reference="1bk-KU-efT"/>
                                 <exclude reference="fmE-3Z-Ybl"/>
                                 <exclude reference="tFr-dS-NF2"/>
-                                <exclude reference="bq6-vY-ziP"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -178,6 +198,8 @@
                                 <exclude reference="G8B-Z2-TBY"/>
                                 <include reference="lBX-tj-IFc"/>
                                 <include reference="yRB-Ua-rbT"/>
+                                <include reference="bq6-vY-ziP"/>
+                                <exclude reference="xo4-2L-6Ab"/>
                                 <exclude reference="S2T-SR-oHU"/>
                                 <include reference="abq-vk-QqA"/>
                                 <include reference="cHz-CJ-Ng7"/>
@@ -190,8 +212,6 @@
                                 <include reference="fmE-3Z-Ybl"/>
                                 <include reference="tFr-dS-NF2"/>
                                 <exclude reference="zBK-Qd-0YP"/>
-                                <include reference="bq6-vY-ziP"/>
-                                <exclude reference="xo4-2L-6Ab"/>
                             </mask>
                         </variation>
                     </view>
