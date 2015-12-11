@@ -2,11 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AutoLayout" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -15,12 +17,73 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TlL-XD-hBz">
+                                <rect key="frame" x="107" y="28" width="473" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pea-WO-PE2">
+                                <rect key="frame" x="107" y="66" width="473" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZt-5L-oWz">
+                                <rect key="frame" x="20" y="68" width="79" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0j0-Fq-Q0R">
+                                <rect key="frame" x="20" y="32" width="79" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0j0-Fq-Q0R" firstAttribute="baseline" secondItem="TlL-XD-hBz" secondAttribute="baseline" id="A1X-Wm-gbI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Pea-WO-PE2" secondAttribute="trailing" id="BQk-HM-3F9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TlL-XD-hBz" secondAttribute="trailing" id="CVW-F6-5gF"/>
+                            <constraint firstItem="YZt-5L-oWz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LPL-21-Pz7"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="0j0-Fq-Q0R" secondAttribute="leading" id="MnP-il-ovd"/>
+                            <constraint firstItem="Pea-WO-PE2" firstAttribute="top" secondItem="TlL-XD-hBz" secondAttribute="bottom" constant="8" symbolic="YES" id="PYE-Xa-Ymk"/>
+                            <constraint firstItem="TlL-XD-hBz" firstAttribute="leading" secondItem="0j0-Fq-Q0R" secondAttribute="trailing" constant="8" symbolic="YES" id="arx-xe-SFy"/>
+                            <constraint firstItem="YZt-5L-oWz" firstAttribute="width" secondItem="0j0-Fq-Q0R" secondAttribute="width" id="cK7-xo-BQK"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="0j0-Fq-Q0R" secondAttribute="leading" id="nYl-Pq-yGq"/>
+                            <constraint firstItem="0j0-Fq-Q0R" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="12" id="nti-8W-803"/>
+                            <constraint firstItem="YZt-5L-oWz" firstAttribute="top" secondItem="0j0-Fq-Q0R" secondAttribute="bottom" constant="15" id="oSW-Cw-Y5L"/>
+                            <constraint firstItem="0j0-Fq-Q0R" firstAttribute="top" secondItem="TlL-XD-hBz" secondAttribute="bottom" constant="-21" id="p91-zA-8we"/>
+                            <constraint firstItem="Pea-WO-PE2" firstAttribute="leading" secondItem="YZt-5L-oWz" secondAttribute="trailing" constant="8" symbolic="YES" id="ptu-hn-O8j"/>
+                            <constraint firstItem="TlL-XD-hBz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="sgB-1Z-QX0"/>
+                            <constraint firstItem="YZt-5L-oWz" firstAttribute="top" secondItem="0j0-Fq-Q0R" secondAttribute="bottom" constant="8" symbolic="YES" id="tIv-Ua-0yE"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="YZt-5L-oWz" secondAttribute="leading" id="tv7-rz-KXt"/>
+                            <constraint firstItem="0j0-Fq-Q0R" firstAttribute="baseline" secondItem="TlL-XD-hBz" secondAttribute="baseline" id="u5Y-El-SyK"/>
+                            <constraint firstItem="Pea-WO-PE2" firstAttribute="leading" secondItem="YZt-5L-oWz" secondAttribute="trailing" constant="8" symbolic="YES" id="uIO-41-kJj"/>
+                            <constraint firstItem="TlL-XD-hBz" firstAttribute="leading" secondItem="0j0-Fq-Q0R" secondAttribute="trailing" constant="384" id="xdE-ZS-LFf"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="A1X-Wm-gbI"/>
+                                <exclude reference="nYl-Pq-yGq"/>
+                                <exclude reference="p91-zA-8we"/>
+                                <exclude reference="u5Y-El-SyK"/>
+                                <exclude reference="LPL-21-Pz7"/>
+                                <exclude reference="tIv-Ua-0yE"/>
+                                <exclude reference="xdE-ZS-LFf"/>
+                                <exclude reference="uIO-41-kJj"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="365"/>
         </scene>
     </scenes>
 </document>
