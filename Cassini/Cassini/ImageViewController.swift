@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageViewController: UIViewController {
+class ImageViewController: UIViewController, UIScrollViewDelegate {
     
     var imageURL: NSURL?{
         didSet{
@@ -23,17 +23,34 @@ class ImageViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!{
         didSet{
             scrollView.contentSize = imageView.frame.size
+            //delegate of outlet
+            scrollView.delegate = self
+            scrollView.minimumZoomScale = 0.03
+            scrollView.maximumZoomScale = 1.0
         }
+    }
+    
+    //method from scroll delegate
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+        return imageView
     }
     
     private func fetchImage(){
         if let url = imageURL{
-            let imageData = NSData(contentsOfURL: url) //NSData is bag of bits, reach out internet and grab bag of bits
-            if imageData != nil{
-                image = UIImage(data: imageData!)
-            }else{
-                image = nil
-            }
+            let qualityOfService = Int(QOS_CLASS_USER_INITIATED.rawValue)
+            dispatch_async(dispatch_get_global_queue(qualityOfService, 0), { () -> Void in
+               
+                let imageData = NSData(contentsOfURL: url) //NSData is bag of bits, reach out internet and grab bag of bits
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    if url == self.imageURL{
+                        if imageData != nil{
+                            self.image = UIImage(data: imageData!)
+                        }else{
+                            self.image = nil
+                        }
+                    }  
+                })
+            })
         }
     }
     
