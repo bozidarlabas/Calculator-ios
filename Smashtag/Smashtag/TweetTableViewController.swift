@@ -15,12 +15,36 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
     
     var searchText: String? = "#standford"{
         didSet{
+            myLastSuccessfulRequest = nil
             etSearch?.text = searchText
             //clear table and refresh
             tweets.removeAll()
             tableView.reloadData()
             refresh()
         }
+    }
+    
+    //this is called every time user pull list view
+    @IBAction func onRefresh(sender: UIRefreshControl?) {
+        if searchText != nil{
+            if let request = nextRequestToAttempt{
+                request.fetchTweets { ( newTweets ) -> Void in
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        //Code when tweets are fetched (this block of code is in main thread)
+                        if newTweets.count > 0 {
+                            //self.myLastSuccessfulRequest = request
+                            self.tweets.insert(newTweets, atIndex: 0)
+                            self.tableView.reloadData()
+                            sender?.endRefreshing()
+                        }
+                    })
+                    
+                }
+            }
+        }else{
+            sender?.endRefreshing()
+        }
+
     }
 
     @IBOutlet weak var etSearch: UITextField!{
@@ -30,20 +54,24 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
         }
     }
     
-    func refresh(){
-        if searchText != nil{
-            let request = TwitterRequest(search: searchText!, count: 100)
-            request.fetchTweets { ( newTweets ) -> Void in
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    //Code when tweets are fetched (this block of code is in main thread)
-                    if newTweets.count > 0 {
-                        self.tweets.insert(newTweets, atIndex: 0)
-                        self.tableView.reloadData()
-                    }
-                })
-                
-            }
+    var myLastSuccessfulRequest: TwitterRequest?
+    
+    var nextRequestToAttempt: TwitterRequest?{
+        if myLastSuccessfulRequest == nil{
+            if searchText != nil{
+                return TwitterRequest(search: searchText!, count: 100)
+            }else{ return nil }
+        }else{
+            return myLastSuccessfulRequest?.requestForNewer
         }
+    }
+    
+    func refresh(){
+        //start spinning
+        if refreshControl != nil{
+            refreshControl?.beginRefreshing()
+        }
+        onRefresh(refreshControl)
     }
     
     //When someone click return

@@ -81,6 +81,13 @@
                             <textInputTraits key="textInputTraits" keyboardType="twitter"/>
                         </textField>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Ial-ET-lWm">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <connections>
+                            <action selector="onRefresh:" destination="vkH-23-Cqp" eventType="valueChanged" id="h1s-RW-EWl"/>
+                        </connections>
+                    </refreshControl>
                     <connections>
                         <outlet property="etSearch" destination="QQz-a0-LGF" id="mH7-ZF-h5t"/>
                     </connections>
