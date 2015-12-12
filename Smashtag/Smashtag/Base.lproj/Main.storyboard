@@ -48,7 +48,19 @@
                             <outlet property="delegate" destination="CXO-c1-mdP" id="Gce-Lf-MD4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="cSe-8t-TzG"/>
+                    <navigationItem key="navigationItem" id="cSe-8t-TzG">
+                        <nil key="title"/>
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Twitter Search Query" textAlignment="natural" minimumFontSize="17" id="Hz7-B1-Hm0">
+                            <rect key="frame" x="20" y="7" width="560" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <textInputTraits key="textInputTraits" keyboardType="twitter"/>
+                        </textField>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="etSearch" destination="Hz7-B1-Hm0" id="RcO-Vk-Vxr"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FQo-xA-12h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
