@@ -16,7 +16,6 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
             if view.window != nil{
                 fetchImage()
             }
-            
         }
     }
     

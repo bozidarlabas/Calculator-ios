@@ -7,7 +7,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Cassini" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -58,13 +57,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="Xea-74-hWx"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1809" y="-2105"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eIc-gs-v1s">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NAZ-Mc-f4d" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="qeJ-9D-PCL" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="txH-G6-vsq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -75,6 +74,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="p8X-NA-G1z"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NAZ-Mc-f4d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1030" y="-2105"/>
         </scene>
@@ -94,7 +94,6 @@
         <!--Image View Controller-->
         <scene sceneID="etL-np-3zk">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xod-T2-H1w" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="p4q-qh-tBU" customClass="ImageViewController" customModule="Cassini" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bZy-w6-xEf"/>
@@ -125,6 +124,7 @@
                         <outlet property="spinner" destination="rMo-xS-SjO" id="6gL-Hi-hE8"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xod-T2-H1w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1030" y="-1288"/>
         </scene>
